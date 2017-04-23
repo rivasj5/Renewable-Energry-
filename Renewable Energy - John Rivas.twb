@@ -1,0 +1,1678 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10000.16.0917.1429                               -->
+<workbook source-build='10.0.1 (10000.16.0917.1429)' source-platform='mac' version='10.0' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='oil prod' inline='true' name='federated.1oa15ge1w2agsq1ee8z13082ad0b' version='10.0'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='oil prod' name='textscan.0bnuonn0r02t0x12e6eyj0g022bz'>
+            <connection class='textscan' directory='/Users/johnrivas' filename='oil prod.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='RENEWABLE' name='textscan.0d0le4x1utghwn1499xsv1vcqgqg'>
+            <connection class='textscan' directory='/Users/johnrivas' filename='RENEWABLE.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[oil prod.csv].[LOCATION]' />
+                <expression op='[RENEWABLE.csv].[LOCATION]' />
+              </expression>
+              <expression op='='>
+                <expression op='[oil prod.csv].[TIME]' />
+                <expression op='[RENEWABLE.csv].[TIME]' />
+              </expression>
+            </expression>
+          </clause>
+          <relation connection='textscan.0bnuonn0r02t0x12e6eyj0g022bz' name='oil prod.csv' table='[oil prod#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='LOCATION' ordinal='0' />
+              <column datatype='string' name='INDICATOR' ordinal='1' />
+              <column datatype='string' name='SUBJECT' ordinal='2' />
+              <column datatype='string' name='MEASURE' ordinal='3' />
+              <column datatype='string' name='FREQUENCY' ordinal='4' />
+              <column datatype='string' name='TIME' ordinal='5' />
+              <column datatype='real' name='Value' ordinal='6' />
+              <column datatype='string' name='Flag Codes' ordinal='7' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0d0le4x1utghwn1499xsv1vcqgqg' name='RENEWABLE.csv' table='[RENEWABLE#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='LOCATION' ordinal='0' />
+              <column datatype='string' name='INDICATOR' ordinal='1' />
+              <column datatype='string' name='SUBJECT' ordinal='2' />
+              <column datatype='string' name='MEASURE' ordinal='3' />
+              <column datatype='string' name='FREQUENCY' ordinal='4' />
+              <column datatype='string' name='TIME' ordinal='5' />
+              <column datatype='real' name='Value' ordinal='6' />
+              <column datatype='string' name='Flag Codes' ordinal='7' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[FREQUENCY (RENEWABLE.csv)]' value='[RENEWABLE.csv].[FREQUENCY]' />
+          <map key='[FREQUENCY]' value='[oil prod.csv].[FREQUENCY]' />
+          <map key='[Flag Codes (RENEWABLE.csv)]' value='[RENEWABLE.csv].[Flag Codes]' />
+          <map key='[Flag Codes]' value='[oil prod.csv].[Flag Codes]' />
+          <map key='[INDICATOR (RENEWABLE.csv)]' value='[RENEWABLE.csv].[INDICATOR]' />
+          <map key='[INDICATOR]' value='[oil prod.csv].[INDICATOR]' />
+          <map key='[LOCATION (RENEWABLE.csv)]' value='[RENEWABLE.csv].[LOCATION]' />
+          <map key='[LOCATION]' value='[oil prod.csv].[LOCATION]' />
+          <map key='[MEASURE (RENEWABLE.csv)]' value='[RENEWABLE.csv].[MEASURE]' />
+          <map key='[MEASURE]' value='[oil prod.csv].[MEASURE]' />
+          <map key='[SUBJECT (RENEWABLE.csv)]' value='[RENEWABLE.csv].[SUBJECT]' />
+          <map key='[SUBJECT]' value='[oil prod.csv].[SUBJECT]' />
+          <map key='[TIME (RENEWABLE.csv)]' value='[RENEWABLE.csv].[TIME]' />
+          <map key='[TIME]' value='[oil prod.csv].[TIME]' />
+          <map key='[Value (RENEWABLE.csv)]' value='[RENEWABLE.csv].[Value]' />
+          <map key='[Value]' value='[oil prod.csv].[Value]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>LOCATION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LOCATION]</local-name>
+            <parent-name>[oil prod.csv]</parent-name>
+            <remote-alias>LOCATION</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INDICATOR</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[INDICATOR]</local-name>
+            <parent-name>[oil prod.csv]</parent-name>
+            <remote-alias>INDICATOR</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SUBJECT</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SUBJECT]</local-name>
+            <parent-name>[oil prod.csv]</parent-name>
+            <remote-alias>SUBJECT</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MEASURE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MEASURE]</local-name>
+            <parent-name>[oil prod.csv]</parent-name>
+            <remote-alias>MEASURE</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FREQUENCY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[FREQUENCY]</local-name>
+            <parent-name>[oil prod.csv]</parent-name>
+            <remote-alias>FREQUENCY</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TIME]</local-name>
+            <parent-name>[oil prod.csv]</parent-name>
+            <remote-alias>TIME</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Value]</local-name>
+            <parent-name>[oil prod.csv]</parent-name>
+            <remote-alias>Value</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Flag Codes</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Flag Codes]</local-name>
+            <parent-name>[oil prod.csv]</parent-name>
+            <remote-alias>Flag Codes</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[oil prod.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LOCATION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LOCATION (RENEWABLE.csv)]</local-name>
+            <parent-name>[RENEWABLE.csv]</parent-name>
+            <remote-alias>LOCATION</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INDICATOR</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[INDICATOR (RENEWABLE.csv)]</local-name>
+            <parent-name>[RENEWABLE.csv]</parent-name>
+            <remote-alias>INDICATOR</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SUBJECT</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SUBJECT (RENEWABLE.csv)]</local-name>
+            <parent-name>[RENEWABLE.csv]</parent-name>
+            <remote-alias>SUBJECT</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MEASURE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MEASURE (RENEWABLE.csv)]</local-name>
+            <parent-name>[RENEWABLE.csv]</parent-name>
+            <remote-alias>MEASURE</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FREQUENCY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[FREQUENCY (RENEWABLE.csv)]</local-name>
+            <parent-name>[RENEWABLE.csv]</parent-name>
+            <remote-alias>FREQUENCY</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TIME (RENEWABLE.csv)]</local-name>
+            <parent-name>[RENEWABLE.csv]</parent-name>
+            <remote-alias>TIME</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Value (RENEWABLE.csv)]</local-name>
+            <parent-name>[RENEWABLE.csv]</parent-name>
+            <remote-alias>Value</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Flag Codes</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Flag Codes (RENEWABLE.csv)]</local-name>
+            <parent-name>[RENEWABLE.csv]</parent-name>
+            <remote-alias>Flag Codes</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[RENEWABLE.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Frequency' datatype='string' name='[FREQUENCY]' role='dimension' type='nominal' />
+      <column caption='Indicator' datatype='string' name='[INDICATOR]' role='dimension' type='nominal' />
+      <column datatype='string' name='[LOCATION (RENEWABLE.csv)]' role='dimension' type='nominal' />
+      <column caption='Location' datatype='string' name='[LOCATION]' role='dimension' type='nominal' />
+      <column caption='Measure' datatype='string' name='[MEASURE]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Renewable Year ' datatype='date' datatype-customized='true' default-format='*YYYY' name='[OIl Production Year (copy)]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATE(&quot;1/1/&quot;+str(RIGHT([TIME (RENEWABLE.csv)],4)))' />
+      </column>
+      <column caption='Subject' datatype='string' name='[SUBJECT]' role='dimension' type='nominal' />
+      <column caption='Time' datatype='string' default-role='measure' default-type='quantitative' name='[TIME]' role='dimension' type='nominal' />
+      <column caption='OIl Production Year' datatype='date' datatype-customized='true' default-format='*YYYY' name='[Time (copy)]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATE(&quot;1/1/&quot;+str(RIGHT([TIME],4)))' />
+      </column>
+      <column-instance column='[LOCATION (RENEWABLE.csv)]' derivation='None' name='[none:LOCATION (RENEWABLE.csv):nk]' pivot='key' type='nominal' />
+      <column-instance column='[LOCATION]' derivation='None' name='[none:LOCATION:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.534653' measure-ordering='alphabetic' measure-percentage='0.465347' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:LOCATION:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;BEL&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;CRI&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;GRC&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;KGZ&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;NAM&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;RUS&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;UKR&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;AGO&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;CHE&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;EST&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;ISL&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;MEX&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;PER&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;THA&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;ARM&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;CMR&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;GAB&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;JOR&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;MNE&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;PRT&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;TUN&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;BHR&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;DEU&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;HRV&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;LBN&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;NLD&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;SGP&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;VEN&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;BEN&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;CUB&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;GTM&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;KHM&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;NER&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;SAU&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;URY&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;AUS&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;COD&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;GBR&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;JPN&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;MNG&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;PRY&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;TUR&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;BWA&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;ERI&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;IRN&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;MAR&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;PAK&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;SYR&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;ALB&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;CHL&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;ETH&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;ISR&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;MKD&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;PHL&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;TJK&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;BRA&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;ECU&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;IND&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;LUX&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;OEU&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;SVN&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;ZMB&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;AUT&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;COG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;GEO&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;KAZ&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;MOZ&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;QAT&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;TWN&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;BIH&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;DNK&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;HTI&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;LBY&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;NOR&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;SLV&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;VNM&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;BLR&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;DOM&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;HUN&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;LKA&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;NPL&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;SRB&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;YEM&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;BRN&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;EGY&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;IRL&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;LVA&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;OMN&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;SWE&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;ZWE&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;CAN&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;ESP&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;IRQ&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;MDA&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;PAN&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;TGO&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;BGD&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;CYP&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;HKG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;KOR&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;NGA&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;SDN&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;USA&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;AZE&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;COL&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;GHA&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;KEN&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;MYS&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;ROU&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;TZA&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;ARE&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;CHN&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;FIN&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;ITA&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;MLT&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;POL&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;TKM&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;BOL&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;DZA&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;IDN&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;LTU&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;NZL&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;SVK&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;ZAF&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;BGR&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;CZE&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;HND&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;KWT&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;NIC&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;SEN&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;UZB&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;ARG&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;CIV&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;FRA&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;JAM&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;MMR&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;PRK&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;TTO&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:LOCATION (RENEWABLE.csv):nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;CHN&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;FRA&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;WLD&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;ETH&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;OECD&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;CAN&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;PAK&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;USA&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;IDN&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;IND&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;NGA&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;OEU&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;G20&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;BRA&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='US'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#4e79a7' fontname='Arial' fontsize='28'>United States Renewable Energy Production&#10;1960-2012</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='oil prod' name='federated.1oa15ge1w2agsq1ee8z13082ad0b' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1oa15ge1w2agsq1ee8z13082ad0b'>
+            <column datatype='string' name='[LOCATION (RENEWABLE.csv)]' role='dimension' type='nominal' />
+            <column caption='Measure' datatype='string' name='[MEASURE]' role='dimension' type='nominal' />
+            <column caption='Renewable Year ' datatype='date' datatype-customized='true' default-format='*YYYY' name='[OIl Production Year (copy)]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATE(&quot;1/1/&quot;+str(RIGHT([TIME (RENEWABLE.csv)],4)))' />
+            </column>
+            <column datatype='string' default-role='measure' default-type='quantitative' name='[TIME (RENEWABLE.csv)]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Value (RENEWABLE.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[LOCATION (RENEWABLE.csv)]' derivation='None' name='[none:LOCATION (RENEWABLE.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[MEASURE]' derivation='None' name='[none:MEASURE:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Value (RENEWABLE.csv)]' derivation='Sum' name='[sum:Value (RENEWABLE.csv):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[OIl Production Year (copy)]' derivation='Year-Trunc' name='[tyr:OIl Production Year (copy):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[OIl Production Year (copy)]' derivation='Year' name='[yr:OIl Production Year (copy):ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[none:LOCATION (RENEWABLE.csv):nk]'>
+            <groupfilter function='member' level='[none:LOCATION (RENEWABLE.csv):nk]' member='&quot;USA&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[yr:OIl Production Year (copy):ok]'>
+            <groupfilter from='1960' function='range' level='[yr:OIl Production Year (copy):ok]' to='2012' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1oa15ge1w2agsq1ee8z13082ad0b].[none:LOCATION (RENEWABLE.csv):nk]</column>
+            <column>[federated.1oa15ge1w2agsq1ee8z13082ad0b].[yr:OIl Production Year (copy):ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[sum:Value (RENEWABLE.csv):qk]' scope='rows' value='KTOE - tonne of oil equivalent' />
+            <format attr='subtitle' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[sum:Value (RENEWABLE.csv):qk]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[sum:Value (RENEWABLE.csv):qk]' scope='rows' value='true' />
+            <encoding attr='space' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[tyr:OIl Production Year (copy):qk]' field-type='quantitative' max='#2014-08-29 03:27:33.333#' min='#1960-04-12 00:00:00#' range-type='fixed' scope='cols' type='space' />
+            <format attr='title' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[tyr:OIl Production Year (copy):qk]' scope='cols' value='Year of Renewable Energy Production' />
+            <format attr='subtitle' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[tyr:OIl Production Year (copy):qk]' scope='cols' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[tyr:OIl Production Year (copy):qk]' scope='cols' value='true' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[none:MEASURE:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1oa15ge1w2agsq1ee8z13082ad0b].[sum:Value (RENEWABLE.csv):qk]</rows>
+        <cols>[federated.1oa15ge1w2agsq1ee8z13082ad0b].[tyr:OIl Production Year (copy):qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='World'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#4e79a7' fontname='Arial' fontsize='28'>World Renewable Energy Production&#10;1960-2012</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='oil prod' name='federated.1oa15ge1w2agsq1ee8z13082ad0b' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1oa15ge1w2agsq1ee8z13082ad0b'>
+            <column datatype='string' name='[LOCATION (RENEWABLE.csv)]' role='dimension' type='nominal' />
+            <column caption='Renewable Year ' datatype='date' datatype-customized='true' default-format='*YYYY' name='[OIl Production Year (copy)]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATE(&quot;1/1/&quot;+str(RIGHT([TIME (RENEWABLE.csv)],4)))' />
+            </column>
+            <column datatype='string' default-role='measure' default-type='quantitative' name='[TIME (RENEWABLE.csv)]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Value (RENEWABLE.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[LOCATION (RENEWABLE.csv)]' derivation='None' name='[none:LOCATION (RENEWABLE.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Value (RENEWABLE.csv)]' derivation='Sum' name='[sum:Value (RENEWABLE.csv):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[OIl Production Year (copy)]' derivation='Year-Trunc' name='[tyr:OIl Production Year (copy):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[none:LOCATION (RENEWABLE.csv):nk]'>
+            <groupfilter count='7' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([Value (RENEWABLE.csv)])' function='order' user:ui-marker='order'>
+                <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+                  <groupfilter function='level-members' level='[none:LOCATION (RENEWABLE.csv):nk]' />
+                  <groupfilter function='union'>
+                    <groupfilter function='member' level='[none:LOCATION (RENEWABLE.csv):nk]' member='&quot;EU28&quot;' />
+                    <groupfilter function='member' level='[none:LOCATION (RENEWABLE.csv):nk]' member='&quot;G20&quot;' />
+                    <groupfilter function='member' level='[none:LOCATION (RENEWABLE.csv):nk]' member='&quot;OECD&quot;' />
+                    <groupfilter function='member' level='[none:LOCATION (RENEWABLE.csv):nk]' member='&quot;OEU&quot;' />
+                    <groupfilter function='member' level='[none:LOCATION (RENEWABLE.csv):nk]' member='&quot;WLD&quot;' />
+                  </groupfilter>
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1oa15ge1w2agsq1ee8z13082ad0b].[none:LOCATION (RENEWABLE.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[tyr:OIl Production Year (copy):qk]' field-type='quantitative' max='#2012-12-31 23:59:59#' min='#1960-01-16 00:00:00#' range-type='fixed' scope='cols' type='space' />
+            <format attr='subtitle' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[tyr:OIl Production Year (copy):qk]' scope='cols' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[tyr:OIl Production Year (copy):qk]' scope='cols' value='true' />
+            <format attr='title' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[sum:Value (RENEWABLE.csv):qk]' scope='rows' value='KTOE - tonne of oil equivalent' />
+            <format attr='subtitle' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[sum:Value (RENEWABLE.csv):qk]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[sum:Value (RENEWABLE.csv):qk]' scope='rows' value='true' />
+            <format attr='title' class='0' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[tyr:OIl Production Year (copy):qk]' scope='cols' value='Year of Renewable Energy Production' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[none:LOCATION (RENEWABLE.csv):nk]' value='Country'>
+              <formatted-text>
+                <run fontname='Arial'>Country</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[none:LOCATION (RENEWABLE.csv):nk]' />
+              <text column='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[none:LOCATION (RENEWABLE.csv):nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1oa15ge1w2agsq1ee8z13082ad0b].[sum:Value (RENEWABLE.csv):qk]</rows>
+        <cols>[federated.1oa15ge1w2agsq1ee8z13082ad0b].[tyr:OIl Production Year (copy):qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='A Look at Renewable Energy' type='storyboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#4e79a7' fontname='Helvetica' fontsize='72'>A Look at Renewable Energy </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='story-description'>
+          <format attr='border-color' value='#4e79a7' />
+          <format attr='border-width' value='2' />
+          <format attr='border-style' value='solid' />
+        </style-rule>
+        <style-rule element='story-title'>
+          <format attr='border-color' value='#4e79a7' />
+          <format attr='border-style' value='solid' />
+          <format attr='border-width' value='3' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='1' param='vert' removable='false' type='layout-flow' w='100000' x='0' y='0'>
+            <zone h='10579' id='3' type='title' w='100000' x='0' y='0' />
+            <zone h='10676' id='4' paired-zone-id='5' removable='false' type='flipboard-nav' w='100000' x='0' y='10579' />
+            <zone h='78353' id='5' paired-zone-id='4' removable='false' type='flipboard' w='100000' x='0' y='21255'>
+              <flipboard active-id='4' show-nav-arrows='true'>
+                <story-points>
+                  <story-point caption='Intro' captured-sheet='Intro' id='4' />
+                  <story-point caption='Types of Renewable Energy' captured-sheet='Types' id='3' />
+                  <story-point caption='US Renewable Energy Production&#10;1960-2012' captured-sheet='US' id='1' />
+                  <story-point caption='World Renewable Energy Production&#10;1960-2012' captured-sheet='World' id='2' />
+                  <story-point caption='Bulkfit and models created' captured-sheet='Bulkfit and Models' id='5'>
+                    <capturedDeltas>
+                      <dashboard name='Bulkfit and Models'>
+                        <zone id='8'>
+                          <formatted-text>
+                            <run fontalignment='1' fontname='Arial' fontsize='28'>ARIMA (0,2,1)</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>Æ&#10;</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>&#10;X</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t = </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>2X</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-2 </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>-</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>Æ </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>X</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-1 </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>+</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>Æ </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>0.846 E</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-1</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>Æ </run>
+                            <run fontalignment='1' fontname='Arial' fontsize='28'>&#10;&#10;&#10;ARIMA (0,2,2)</run>
+                            <run fontalignment='1' fontname='Arial' fontsize='12'>Æ&#10; </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>&#10;X</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t = </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>2X</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-2 </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>-</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>Æ </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>X</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-1 </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>+</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>Æ </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>0.884 E</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-1</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'> - 0.076 E</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-2</run>
+                            <run fontalignment='1' fontname='Arial' fontsize='28'>&#10;&#10;&#10;DECOM1 ( )&#10;</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>&#10;T</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='5'>Æ </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial'>= </run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>45,182.77 + 1,528.73</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12' italic='true'>t</run>
+                            <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>Æ </run>
+                            <run fontalignment='1' fontname='Arial' fontsize='28'>Æ&#10;&#10;</run>
+                          </formatted-text>
+                        </zone>
+                      </dashboard>
+                    </capturedDeltas>
+                  </story-point>
+                  <story-point caption='Actuals vs. Predicted' captured-sheet='Predicted vs Actuals' id='6' />
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+        </zone>
+      </zones>
+    </dashboard>
+    <dashboard name='Bulkfit and Models'>
+      <style>
+        <style-rule element='dash-text'>
+          <format attr='border-style' id='dash-text_4' value='solid' />
+          <format attr='border-color' id='dash-text_4' value='#4e79a7' />
+          <format attr='border-style' id='dash-text_7' value='solid' />
+          <format attr='border-width' id='dash-text_4' value='2' />
+          <format attr='border-width' id='dash-text_7' value='2' />
+          <format attr='border-color' id='dash-text_7' value='#4e79a7' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone forceUpdate='true' h='80313' id='1' type='text' w='34555' x='13613' y='19687'>
+            <formatted-text>
+              <run fontcolor='#454545' fontname='Helvetica Neue' fontsize='12'>&gt; bulkfit(train)&#10;$res&#10;      ar d ma        AIC&#10; [1,]  0 0  0  1227.1718&#10; [2,]  0 0  1  1172.1046&#10; [3,]  0 0  2  1132.6871&#10; [4,]  0 1  0  1021.2402&#10; [5,]  0 1  1  1021.6717&#10; [6,]  0 1  2  1022.4537&#10; [7,]  0 2  0  1025.8661&#10; [8,]  0 2  1   998.8742&#10; [9,]  0 2  2  1000.6758&#10;[10,]  1 0  0  1049.3765&#10;[11,]  1 0  1  1049.7552&#10;[12,]  1 0  2  1050.5116&#10;[13,]  1 1  0  1021.1033&#10;[14,]  1 1  1  1018.6871&#10;[15,]  1 1  2  1020.3656&#10;[16,]  1 2  0  1011.4127&#10;[17,]  1 2  1  1000.6882&#10;[18,]  1 2  2  1002.6703&#10;[19,]  0 0  0 99999.0000&#10;[20,]  0 0  0 99999.0000&#10;[21,]  0 0  0 99999.0000&#10;[22,]  2 1  0  1021.1582&#10;[23,]  2 1  1  1020.4062&#10;[24,]  2 1  2  1022.3124&#10;[25,]  2 2  0  1006.6387&#10;[26,]  2 2  1  1002.6521&#10;[27,]  2 2  2  1004.3260&#10; &#10;$min&#10;      ar        d       ma      AIC &#10;  0.0000   2.0000   1.0000 998.8742 &#10; </run>
+            </formatted-text>
+          </zone>
+          <zone forceUpdate='true' h='19687' id='4' type='text' w='48168' x='0' y='0'>
+            <formatted-text>
+              <run fontalignment='1' fontcolor='#4e79a7' fontname='Arial' fontsize='72'>Bulkfit</run>
+              <run fontalignment='1' fontname='Arial' fontsize='22'>Æ&#10;</run>
+            </formatted-text>
+          </zone>
+          <zone h='80313' id='5' type='empty' w='13613' x='0' y='19687' />
+          <zone h='19687' id='7' type='text' w='51832' x='48168' y='0'>
+            <formatted-text>
+              <run fontalignment='1' fontcolor='#4e79a7' fontname='Arial' fontsize='72'>Models</run>
+            </formatted-text>
+          </zone>
+          <zone forceUpdate='true' h='80313' id='8' type='text' w='51832' x='48168' y='19687'>
+            <formatted-text>
+              <run fontalignment='1' fontname='Arial' fontsize='28'>ARIMA (0,2,1)</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>Æ&#10;</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>&#10;X</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t = </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>2X</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-2 </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>-</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>Æ </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>X</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-1 </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>+</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>Æ </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>0.846 E</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-1</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>Æ </run>
+              <run fontalignment='1' fontname='Arial' fontsize='28'>&#10;&#10;&#10;&#10;&#10;ARIMA (0,2,2)&#10;</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>&#10;X</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t = </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>2X</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-2 </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>-</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>Æ </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>X</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-1 </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>+</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>Æ </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>0.884 E</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-1</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'> - 0.076 E</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t-2</run>
+              <run fontalignment='1' fontname='Arial' fontsize='28'>&#10;&#10;&#10;DECOM1 ( )&#10;</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>&#10;T</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='6'>t</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='5'>Æ </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial'>= </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>45,182.77 + 1,528.73</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12' italic='true'>t</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Arial' fontsize='12'>Æ </run>
+              <run fontalignment='1' fontname='Arial' fontsize='28'>Æ&#10;&#10;</run>
+            </formatted-text>
+          </zone>
+        </zone>
+      </zones>
+    </dashboard>
+    <dashboard name='Intro'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='96474' id='1' is-scaled='1' param='/Users/johnrivas/OneDrive - University of Houston Downtown/SCHOOL/Fall 2016/Time/Project/title pic.jpeg' type='bitmap' w='98604' x='640' y='3134' />
+        <zone forceUpdate='true' h='24976' id='2' type='text' w='15358' x='47004' y='50539'>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#4e79a7' fontname='Arial' fontsize='12'>Stat 5307</run>
+            <run fontalignment='1' fontcolor='#4e79a7' fontname='Arial' fontsize='16'>&#10;&#10;United States Renewable Energy Production &#10;from 1960 to 2014</run>
+            <run fontalignment='1' fontcolor='#4e79a7' fontname='Arial' fontsize='22'>Æ </run>
+            <run fontalignment='1' fontcolor='#4e79a7' fontname='Arial' fontsize='20'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#4e79a7' fontname='Arial' fontsize='14'>&#10;John Rivas</run>
+          </formatted-text>
+        </zone>
+      </zones>
+    </dashboard>
+    <dashboard name='Predicted vs Actuals'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='22429' id='1' is-centered='0' param='/Users/johnrivas/Desktop/Screen Shot 2016-12-04 at 2.50.49 PM.png' type='bitmap' w='100000' x='0' y='16650' />
+          <zone forceUpdate='true' h='30167' id='3' is-centered='0' param='/Users/johnrivas/Desktop/Screen Shot 2016-12-04 at 2.55.54 PM.png' type='bitmap' w='64805' x='0' y='39079' />
+          <zone forceUpdate='true' h='30754' id='4' is-centered='0' param='/Users/johnrivas/Desktop/Screen Shot 2016-12-04 at 2.53.50 PM.png' type='bitmap' w='100000' x='0' y='69246' />
+          <zone h='30167' id='5' is-centered='0' param='/Users/johnrivas/OneDrive - University of Houston Downtown/SCHOOL/Fall 2016/Time/Project/images.png' type='bitmap' w='35195' x='64805' y='39079' />
+          <zone h='16650' id='6' type='text' w='100000' x='0' y='0'>
+            <formatted-text>
+              <run fontalignment='1' fontcolor='#4e79a7' fontname='Arial' fontsize='72'>Actuals vs. Predicted Values</run>
+            </formatted-text>
+          </zone>
+        </zone>
+      </zones>
+    </dashboard>
+    <dashboard name='Types'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='5' param='vert' type='layout-flow' w='100000' x='0' y='0'>
+            <zone h='99608' id='3' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='99608' id='1' is-scaled='1' param='/Users/johnrivas/OneDrive - University of Houston Downtown/SCHOOL/Fall 2016/Time/Project/type of energy.png' type='bitmap' w='100000' x='0' y='0' />
+            </zone>
+          </zone>
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' maximized='true' name='A Look at Renewable Energy'>
+      <viewpoints />
+      <active id='4' />
+    </window>
+    <window class='dashboard' hidden='true' name='Bulkfit and Models'>
+      <viewpoints />
+      <active id='1' />
+    </window>
+    <window class='dashboard' hidden='true' name='Intro'>
+      <viewpoints />
+      <active id='2' />
+    </window>
+    <window class='dashboard' hidden='true' name='Predicted vs Actuals'>
+      <viewpoints />
+      <active id='-1' />
+    </window>
+    <window class='dashboard' hidden='true' name='Types'>
+      <viewpoints />
+      <active id='1' />
+    </window>
+    <window class='worksheet' hidden='true' name='US'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1oa15ge1w2agsq1ee8z13082ad0b].[none:LOCATION (RENEWABLE.csv):nk]</field>
+            <field>[federated.1oa15ge1w2agsq1ee8z13082ad0b].[none:MEASURE:nk]</field>
+            <field>[federated.1oa15ge1w2agsq1ee8z13082ad0b].[yr:OIl Production Year (copy):ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' hidden='true' name='World'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1oa15ge1w2agsq1ee8z13082ad0b].[none:LOCATION (RENEWABLE.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='A Look at Renewable Energy' width='384'>
+      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
+      QmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
